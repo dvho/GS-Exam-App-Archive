@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(51,51,51);
+    line-height: 0;
+    user-select: none;
+}
+
+.demo-container {
+    height: 100vh;
+    position: relative;
+    background-color: rgb(245,245,245); /* Changed the background to the match that of the PDF to help with visualization */
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .demo-container {
+        background-color: rgb(129,129,129);
+    }
+}
+
+.date-picker {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 320px;
+    height: 492px;
+    margin: 0;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.18);
+    border-radius: 3px;
+    background-color: rgb(255,255,255);
+}
+
+@media (max-width: 320px) {
+    .date-picker {
+        height: 100vh;
+    }
+}
+
+.app-top {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 64px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(228,228,228);
+    font-size: 16px;
+}
+.top-left-container {
+    display: flex;
+    flex: 1;
+    margin-top: 4px;
+    margin-left: 16px;
+}
+.valid-date {
+    color: rgb(115,115,115);
+    opacity: 1;
+    transition: all .2s ease;
+}
+.invalid-date {
+    color: rgb(255,0,0);
+    opacity: 0;
+    animation: invalid-date-animation 1.45s ease;
+}
+@keyframes invalid-date-animation {
+    0% {transform: scale(1); opacity: 1}
+    10% {transform: scale(1.07) rotateZ(-10deg);}
+    20% {transform: scale(1.05) rotateZ(8deg);}
+    30% {transform: scale(1.03) rotateZ(-6deg);}
+    40% {transform: scale(1.02) rotateZ(4deg);}
+    50% {transform: scale(1.01) rotateZ(-2deg);}
+    60% {transform: scale(1) rotateZ(0deg);}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.top-right-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.toggle-full-date {
+    display: flex;
+    height: 40px;
+    width: 138px;
+    border-radius: 3px;
+}
+#toggle-full-date:hover {
+    border: 1px solid rgb(18,113,217);
+}
+.date-slash {
+    height: 100%;
+    line-height: 44px;
+    text-align: center;
+    padding-right: 1px;
+}
+.manual-enter {
+    padding: 0 0 0 1px; /* Padding will automatically default to ~8px in some mobile browsers. Extra 1x on left is for spacing from the slash. */
+    cursor: pointer;
+}
+.manual-enter[placeholder] {
+    color: rgb(51,51,51);
+}
+
+.enter-month {
+    margin-left: 10px;
+    width: 17px;
+    border: none;
+    font-size: 14px;
+}
+.enter-day {
+    width: 17px;
+    border: none;
+    font-size: 14px;
+}
+.enter-year {
+    width: 17px;
+    border: none;
+    font-size: 14px;
+}
+
+.toggle-day {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-right: -10px;
+}
+.toggle-day i {
+    padding: 6px;
+    transition: transform .2s ease;
+    cursor: pointer;
+}
+.toggle-day i:hover {
+    transform: scale(1.2);
+    transition: transform .2s ease;
+}
+
+
+
+
+
+
+
+
+
+.app-middle {
+    flex: 1;
+    margin: 32px 34px;
+}
+.month-year-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    height: 32px;
+}
+.display-month-year {
+    display: flex;
+    flex: 5;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+.toggle-month {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.toggle-month i {
+    padding: 9px 14px;
+    border-radius: 50%;
+    transition: transform .2s ease;
+}
+.toggle-month i:hover {
+    color: rgb(18,113,217);
+    background-color: rgb(244,248,253);
+}
+.cal-head {
+    display: flex;
+    width: 99%;
+    height: 32px;
+    padding: 5px 0 0 1px;
+}
+.day-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 33px;
+    width: 36px;
+    font-size: 13px;
+}
+.cal-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.blank-day {
+    width: 36px;
+    height: 36px;
+}
+.cal-day {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    color: rgb(18,113,217);
+    cursor: pointer;
+}
+.cal-day p {
+    padding-top: 3px;
+}
+.today {
+    color: rgb(255,255,255);
+    border-radius: 50%;
+    background-color: rgb(18,113,217);
+    transition: background-color .3s ease;
+}
+.cal-day:hover {
+    border: 2px solid rgb(18,113,217);
+    border-radius: 50%;
+}
+.past-date {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    color: rgb(191,191,191);
+}
+.past-date p {
+    padding-top: 3px;
+}
+
+
+
+
+
+
+
+
+
+.app-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 56px;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid rgb(228,228,228);
+}
+.bottom-buttons {
+    width: 56px;
+    height: 32px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.cancel-button {
+    background-color: rgb(255,255,255);
+    margin-right: 8px;
+    color: rgb(18,113,217);
+    transition: color .2s ease;
+}
+.cancel-button p {
+    margin: 0;
+}
+.done-button {
+    background-color: rgb(18,113,217);
+    margin: 12px 12px 12px 8px;
+    transition: background-color .2s ease;
+}
+.done-button p {
+    color: rgb(255,255,255);
+    margin: 0;
+}
+.done-button:hover {
+    background-color: rgba(18,113,217,.8);
+    transition: background-color .2s ease;
+}
+.cancel-button:hover {
+    color: rgba(18,113,217,.7);
+    transition: all .2s ease;
+}
