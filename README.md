@@ -1,5 +1,5 @@
-# Resume
-This is an archive of a hiring exam I did for a contract with Goldman Sachs: Create a React app that is pixel perfect to the provided mockup and extensive spec sheet and only use React, no other NPM packages (e.g. npm moment would have been crucial here). No other interviewee nor developer on my future team completed the project so I was advanced to the next round in their 8-10 step process. By the time they'd made an offer it was too late, I'd accepted another. ¯\\_(ツ)\_/¯
+# GS Exam App
+This is an archive of a hiring exam I did for a contract with Goldman Sachs: Create a React app that is pixel perfect to the provided mockup and extensive spec sheet and only use React, no other NPM packages (e.g. npm moment would have been crucial here). No other interviewee nor developer on my future team was able to complete the exam so I was advanced to the next round in their 8-10 step process. By the time they'd made an offer it was too late, I'd accepted another. ¯\\_(ツ)\_/¯
 
 _________________________
 
